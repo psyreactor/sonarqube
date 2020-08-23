@@ -1,0 +1,44 @@
+---
+inherit_from: .rubocop_todo.yml
+
+require: rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 2.5
+  NewCops: enable
+
+Layout/LineLength:
+  Max: 123
+  Exclude:
+    - 'lib/sonarqube/client/*'
+    - 'spec/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'lib/sonarqube/*'
+    - 'lib/sonarqube/client/*'
+
+Lint/NonDeterministicRequireOrder:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
