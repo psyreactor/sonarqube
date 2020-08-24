@@ -29,7 +29,7 @@ class Sonarqube::Client
     #   Sonarqube.create_group('new-group')
     #   Sonarqube.create_group('sonarqube', { description: 'New Sonarqube project' })
     #
-    # @param  [String] name(required) The name of a group.
+    # @param  [String] name (required) The name of a group.
     # @param  [Hash] options A customizable set of options.
     # @option options [String] :description Description for the new group. A group description cannot be larger than 200 characters.
     # @return [Sonarqube::ObjectifiedHash] Information about created group.
@@ -44,7 +44,7 @@ class Sonarqube::Client
     # @example
     #   Sonarqube.delete_group('projecto')
     #
-    # @param  [String] name(required) The name of a group
+    # @param  [String] name (required) The name of a group
     # @return [Sonarqube::ObjectifiedHash] Empty hash response.
     def delete_group(name)
       post('/api/user_groups/delete', body: { name: name })
@@ -57,7 +57,7 @@ class Sonarqube::Client
     #   Sonarqube.group_members('AXQRcKrW9pRiZzanEJ2E')
     #   Sonarqube.group_members('AXQRcKrW9pRiZzanEJ2E, { description: 'update group description })
     #
-    # @param  [String] id(required) The ID of a group.
+    # @param  [String] id (required) The ID of a group.
     # @param  [Hash] options A customizable set of options.
     # @option options [String] :description New optional description for the group. A group description cannot be larger than 200 characters. If value is not defined, then description is not changed.
     # @option options [String] :name New optional name for the group. A group name cannot be larger than 255 characters and must be unique. Value 'anyone' (whatever the case) is reserved and cannot be used. If value is empty or not defined, then name is not changed.
@@ -73,8 +73,8 @@ class Sonarqube::Client
     #   Sonarqube.add_member('AXQRcKrW9pRiZzanEJ2E', 'test-user')
     #   Sonarqube.add_member('AXQRcKrW9pRiZzanEJ2E', 'test-user', {name: 'sonar-groups'})
     #
-    # @param  [String] id(required) The id of group.
-    # @param  [String] login(required) The login of user.
+    # @param  [String] id (required) The id of group.
+    # @param  [String] login (required) The login of user.
     # @param  [Hash] options A customizable set of options.
     # @option options [String] :name Optional name of group.
     # @return [Sonarqube::ObjectifiedHash]
@@ -85,14 +85,14 @@ class Sonarqube::Client
     end
     alias member_add add_member
 
-    # Reomve a user to a group.
+    # Remove a user to a group.
     #
     # @example
     #   Sonarqube.remove_member('AXQRcKrW9pRiZzanEJ2E', 'test-user')
     #   Sonarqube.remove_member('AXQRcKrW9pRiZzanEJ2E', 'test-user', {name: 'sonar-groups'})
     #
-    # @param  [String] id(required) The id of group.
-    # @param  [String] login(required) The login of user.
+    # @param  [String] id (required) The id of group.
+    # @param  [String] login (required) The login of user.
     # @param  [Hash] options A customizable set of options.
     # @option options [String] :name Optional name of group.
     # @return [Sonarqube::ObjectifiedHash]
@@ -110,8 +110,8 @@ class Sonarqube::Client
     #   Sonarqube.list_members({name: 'sonar-groups'})
     #
     # @param  [Hash] options A customizable set of options.
-    # @option options [String] :name(required) Name of group.
-    # @option options [String] :id(required) Id of group.
+    # @option options [String] :name (required) Name of group.
+    # @option options [String] :id (required) Id of group.
     # @return [Sonarqube::ObjectifiedHash] Information about added team member.
     def list_members(options = {})
       raise ArgumentError, 'Missing required parameters' if options[:id].nil? && options[:name].nil?

@@ -29,9 +29,9 @@ class Sonarqube::Client
     #   or
     #   Sonarqube.create_user('joe', 'joe', 'secret')
     #
-    # @param  [String] name(required) The name of a user.
-    # @param  [String] login(required) The login of a user.
-    # @param  [String] password(required only is local user) The password of a user.
+    # @param  [String] name (required) The name of a user.
+    # @param  [String] login (required) The login of a user.
+    # @param  [String] password (required only is local user) The password of a user.
     # @param  [Hash] options A customizable set of options.
     # @option options [String] :email The emails of a user.
     # @option options [String] :local Specify if the user should be authenticated from SonarQube server or from an external authentication system. Password should not be set when local is set to false.
@@ -50,7 +50,7 @@ class Sonarqube::Client
     # @example
     #   Sonarqube.update_user('joe', { email: 'joe.smith@foo.org', name: 'Joe' })
     #
-    # @param  [String] login(required) The login of a user
+    # @param  [String] login (required) The login of a user
     # @param  [Hash] options A customizable set of options.
     # @option options [String] :email The email of a user.
     # @option options [String] :name The name of a user.
@@ -65,9 +65,9 @@ class Sonarqube::Client
     # Blocks the specified user. Available only for admin.
     #
     # @example
-    #   Sonarqube.block_user(15)
+    #   Sonarqube.deactivate_user('login')
     #
-    # @param [String] login(required) The login of a user
+    # @param [String] login (required) The login of a user
     # @param  [Hash] options A customizable set of options.
     def deactivate_user(login, options = {})
       post('/api/users/deactivate', body: { login: login }.merge!(options))
@@ -80,9 +80,9 @@ class Sonarqube::Client
     #   Sonarqube.change_password_user('joe', 'password')
     #   Sonarqube.change_password_user('admin', 'password', admin)
     #
-    # @param [String] login(required) The login of a user
-    # @param [String] password(required) New password for login
-    # @param [String] old_password(optional) Previous password. Required when changing one's own password.
+    # @param [String] login (required) The login of a user
+    # @param [String] password (required) New password for login
+    # @param [String] old_password (optional) Previous password. Required when changing one's own password.
     # @param  [Hash] options A customizable set of options.
     def change_password_user(login, password, old_password = nil, options = {})
       body = { login: login, password: password }
@@ -91,13 +91,13 @@ class Sonarqube::Client
     end
 
     alias user_change_password change_password_user
-    # Creates a new user session.
+    # Update login user.
     #
     # @example
-    #   Sonarqube.session('jack@example.com', 'secret12345')
+    #   Sonarqube.update_login_user('test', 'new_test')
     #
-    # @param  [String] login(required) The login of a user
-    # @param  [String] new_login(required) The new login of a user
+    # @param  [String] login (required) The login of a user
+    # @param  [String] new_login (required) The new login of a user
     # @param  [Hash] options A customizable set of options.
     # @return [Sonarqube::ObjectifiedHash]
     def update_login_user(login, new_login, options = {})
@@ -108,7 +108,7 @@ class Sonarqube::Client
     # Lists the groups a user belongs to.
     #
     # @example
-    #   Sonarqube.group_user
+    #   Sonarqube.group_user('login')
     #
     # @param  [String] login A customizable set of options.
     # @param  [Hash] options A customizable set of options.
