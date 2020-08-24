@@ -55,7 +55,7 @@ class Sonarqube::Client
     end
 
     alias project_delete delete_project
-    # Gets a list of project hooks.
+    # Update project key.
     #
     # @example
     #   Sonarqube.project_update_key(42)
@@ -69,11 +69,10 @@ class Sonarqube::Client
     end
 
     alias update_key_project project_update_key
-    # Gets a project hook.
+    # Update  project visibility.
     #
     # @example
-    #   Sonarqube.project_hook(42, 5)
-    #   Sonarqube.project_hook('sonarqube', 5)
+    #   project_update_visibility('sonarqube', 'public')
     #
     # @param  [String] project The name fo project.
     # @param  [String] visibility The visibility of a project.
