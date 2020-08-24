@@ -4,6 +4,11 @@
 
 Please see: https://github.com/psyreactor/sonarqube-ruby/releases
 
+### 1.0.2 (24/08/2020)
+
+- Fix
+  * Fix gemspec repo url
+
 ### 1.0.1 (24/08/2020)
 
 - Fix
