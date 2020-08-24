@@ -11,17 +11,28 @@ on:
     tags:
       - v*
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build_and_deploy:
     runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: GitHub Jekyll Build Action
-      uses: iranzo/gh-pages-jekyll-action@1.0.0
-      env:
-        SOURCE_FOLDER: ./docs
+        # Use GitHub Actions' cache to cache dependencies on servers
+        - uses: actions/cache@v1
+          with:
+            path: vendor/bundle
+            key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-gems-
+
+        # Use GitHub Deploy Action to build and deploy to Github
+        - uses: jeffreytse/jekyll-deploy-action@v0.1.1
+          with:
+            provider: 'github'
+            token: ${{ secrets.GH_TOKEN }} # It's your Personal Access Token(PAT)
+            repository: ''             # Default is current repository
+            branch: 'gh-pages'         # Default is gh-pages for github provider
+            jekyll_src: './docs'           # Default is root directory
+            jekyll_cfg: '_config.yml'  # Default is _config.yml
+            cname: ''                  # Default is to not use a cname
+            actor: ''                  # Default is the GITHUB_ACTOR
