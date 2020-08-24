@@ -20,4 +20,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_ACTOR: "psyreactor"
           JEKYLL_ROOT: "docs/"
+          DEPLOY_SITE: true 
         uses: psyreactor/jekyll-build-optional-deploy-gh-pages@master
