@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['marianilucas@gmail.com']
   gem.description   = 'Ruby client for Sonarqube API'
   gem.summary       = 'A Ruby wrapper for the Sonarqube API'
-  gem.homepage      = 'https://github.com/psyreactor/sonarqube-ruby'
+  gem.homepage      = 'https://github.com/psyreactor/sonarqube'
 
   gem.files         = Dir['{lib}/**/*', 'LICENSE.txt', 'README.md', 'CHANGELOG.md']
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
