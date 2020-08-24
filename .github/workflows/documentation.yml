@@ -6,6 +6,8 @@ name: Documentation
 # events but only for the master branch
 on:
   push:
+    branches:
+      - master
     tags:
       - v*
 
@@ -21,3 +23,5 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: GitHub Jekyll Build Action
       uses: iranzo/gh-pages-jekyll-action@1.0.0
+      env:
+        SOURCE_FOLDER: ./docs
