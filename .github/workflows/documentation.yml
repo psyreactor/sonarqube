@@ -22,4 +22,4 @@ jobs:
           GITHUB_REPOSITORY: "psyreactor/sonarqube" 
           JEKYLL_ROOT: "docs/"
           DEPLOY_SITE: true 
-        uses:  ileadall42/jekyll-build-optional-deploy-gh-pages 
+        uses:  ileadall42/jekyll-build-optional-deploy-gh-pages@master
