@@ -22,8 +22,8 @@ title: Sonarqube Ruby
 email: marianilucas@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Sonarqube is a Ruby wrapper for the Sonarqube API Rest.
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/sonarqube" # the subpath of your site, e.g. /blog
+url: "https://psyreactor.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  psyreactor
 
