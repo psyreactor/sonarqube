@@ -8,6 +8,7 @@ module Sonarqube
     # Please keep in alphabetical order
     include Groups
     include Projects
+    include Tokens
     include Users
 
     # Text representation of the client, masking private token.
