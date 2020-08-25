@@ -88,28 +88,6 @@ project.to_hash
 # => {"project"=>{"key"=>"new_project", "name"=>"new_project", "qualifier"=>"TRK", "visibility"=>"public"}}
 ```
 
-#### Delete Project
-```ruby
-project = Sonarqube.project_delete('test')
-# => #<Sonarqube::ObjectifiedHash:46220 {hash: {}}
-project.to_hash.empty?
-# => true
-```
-
-#### Search Project
-```ruby
-projects = Sonarqube.project_search()
-# => #<Sonarqube::ObjectifiedHash:46240 {hash: {"paging"=>{"pageIndex"=>1, "pageSize"=>100, "total"=>2}, "components"=>[{"organization"=>"default-organization", "key"=>"old_key", "name"=>"new_proyect", "qualifier"=>"TRK", "visibility"=>"private"}, {"organization"=>"default-organization", "key"=>"test", "name"=>"test", "qualifier"=>"TRK", "visibility"=>"public"}]}}
-projects.components.each do | project |
-  puts "name: #{project.name}"
-  puts "key: #{project.key}"
-end
-# name: new_proyect
-# key: old_key
-# name: test
-# key: test
-```
-
 ### Users
 
 #### Create User
@@ -122,55 +100,8 @@ user.user.name
 # name_user
 ```
 
-#### Delete User
-```ruby
-user = Sonarqube.user_delete('test')
-# => #<Sonarqube::ObjectifiedHash:46220 {hash: {}}
-user.to_hash.empty?
-# => true
-```
-
-#### Search User
-```ruby
-users = Sonarqube.users_search()
-# => #<Sonarqube::ObjectifiedHash:46340 {hash: {"paging"=>{"pageIndex"=>1, "pageSize"=>50, "total"=>5}, "users"=>[{"login"=>"admin", "name"=>"Administrator", "active"=>true, "groups"=>["sonar-administrators", "sonar-users"], "tokensCount"=>1, "local"=>true, "externalIdentity"=>"admin", "externalProvider"=>"sonarqube", "lastConnectionDate"=>"2020-08-22T23:09:14+0000"}, {"login"=>"new_user", "name"=>"key_new_user", "active"=>true, "groups"=>["sonar-users"], "tokensCount"=>0, "local"=>true, "externalIdentity"=>"new_user", "externalProvider"=>"sonarqube"}, {"login"=>"login_name", "name"=>"name_user", "active"=>true, "groups"=>["sonar-users"], "tokensCount"=>0, "local"=>true, "externalIdentity"=>"login_name", "externalProvider"=>"sonarqube"}, {"login"=>"test3", "name"=>"test QA", "active"=>true, "groups"=>["sonar-users"], "tokensCount"=>0, "local"=>true, "externalIdentity"=>"test3", "externalProvider"=>"sonarqube"}, {"login"=>"newlogin", "name"=>"test QA", "active"=>true, "groups"=>["sonar-users"], "tokensCount"=>0, "local"=>true, "externalIdentity"=>"newlogin", "externalProvider"=>"sonarqube"}]}}
-users.users.each do | user |
-  puts "name: #{user.name}"
-  puts "login: #{user.login}"
-  puts "lastConection: #{user.lastConnectionDate}" if defined? user.lastConnectionDate
-end
-# name: Administrator
-# login: admin
-# lastConection: 2020-08-22T23:09:14+0000
-# name: key_new_user
-# login: new_user
-# name: name_user
-# login: login_name
-# name: test QA
-# login: test3
-# name: test QA
-# login: newlogin
-```
 
 ### Groups
-
-#### Create Group
-```ruby
-group = Sonarqube.create_group('New-Group', {description: 'Sonarqube group users'})
-# => #<Sonarqube::ObjectifiedHash:46500 {hash: {"group"=>{"uuid"=>"AXQYrrgCsrvdoo0YodNM", "organization"=>"default-organization", "name"=>"New-Group", "description"=>"Sonarqube group users", "membersCount"=>0, "default"=>false}}}
-group.group.uuid
-# AXQYrrgCsrvdoo0YodNM
-group.group.description
-# Sonarqube group users
-```
-
-#### Delete Group
-```ruby
-group = Sonarqube.group_delete('New-Group')
-# => #<Sonarqube::ObjectifiedHash:46220 {hash: {}}
-group.to_hash.empty?
-# => true
-```
 
 #### Search Group
 ```ruby

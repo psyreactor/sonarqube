@@ -4,6 +4,14 @@
 
 Please see: https://github.com/psyreactor/sonarqube-ruby/releases
 
+### 1.1.0 (24/08/2020)
+
+- New features
+  * Added support for users_token API
+- Fix
+  * Fix Readme
+  * Add site documentation
+
 ### 1.0.2 (24/08/2020)
 
 - Fix
