@@ -10,6 +10,7 @@ nav_order: 1
 
 [![Build Status](https://img.shields.io/github/workflow/status/psyreactor/sonarqube/CI/master)](https://github.com/psyreactor/sonarqube/actions?query=workflow%3ARuby)
 [![Inline docs](https://inch-ci.org/github/psyreactor/sonarqube.svg)](https://inch-ci.org/github/psyreactor/sonarqube)
+[![Coverage Status](https://coveralls.io/repos/github/psyreactor/sonarqube/badge.svg)](https://coveralls.io/github/psyreactor/sonarqube)
 [![Gem version](https://img.shields.io/gem/v/sonarqube.svg)](https://rubygems.org/gems/sonarqube)
 [![License](https://img.shields.io/badge/license-BSD-red.svg)](https://github.com/psyreactor/sonarqube/blob/master/LICENSE.txt)
 

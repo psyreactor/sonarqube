@@ -30,7 +30,7 @@ describe Sonarqube do
       actions = described_class.actions
       expect(actions).to be_an Array
       expect(actions.first).to be_a Symbol
-      expect(actions.min).to eq(:add_member)
+      expect(actions.min).to eq(:add_group_permission)
     end
   end
 

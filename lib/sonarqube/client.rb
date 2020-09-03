@@ -7,6 +7,7 @@ module Sonarqube
 
     # Please keep in alphabetical order
     include Groups
+    include Permissions
     include Projects
     include Tokens
     include Users
