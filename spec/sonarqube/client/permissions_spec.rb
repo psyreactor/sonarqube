@@ -200,4 +200,21 @@ describe Sonarqube::Client do
       end
     end
   end
+
+  describe '.permission_list_group' do
+    context 'when successful request' do
+      before do
+        stub_get('/api/permissions/groups', 'permission_list_group')
+        @permission = Sonarqube.permission_list_group
+      end
+
+      it 'gets the correct resource' do
+        expect(a_get('/api/permissions/groups')).to have_been_made
+      end
+
+      it 'returns returns empty hash' do
+        expect(@permission.groups.first.id).to eq('Anyone')
+      end
+    end
+  end
 end

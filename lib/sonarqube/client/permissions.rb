@@ -211,5 +211,27 @@ class Sonarqube::Client
     def remove_group_from_template(options = {})
       post('/api/permissions/remove_group_from_template', body: options)
     end
+
+    # Lists the groups with their permissions
+    #
+    # @example
+    # Sonarqube.permission_list_group({ q: 'test', projectsKey: 'project' })
+    #
+    # @param  [Hash] options A customizable set of options.
+    # @option options [String] :organization Key of organization, used when group name is set
+    # @option options [String] :p 1-based page number.
+    # @option options [String] :permission Possible values for global permissions or values for project permissions.
+    # @option options [String] :q Limit search to group names that contain the supplied string.
+    # @option options [String] :ps Page size. Must be greater than 0 and less or equal than 100
+    # @option options [String] :projectId Id of project.
+    # @option options [String] :projectKey Key of project.
+    # (Any provided options will be passed to Sonarqube. See {https://SONAR_URL/web_api/api/permissions/groups?internal=true}
+    # @return [<Sonarqube::ObjectifiedHash>]
+    def permission_list_group(options = {})
+      options.transform_keys(&:to_sym)
+
+      get('/api/permissions/groups', quey: options)
+    end
+    alias list_group_permission permission_list_group
   end
 end

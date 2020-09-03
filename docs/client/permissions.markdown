@@ -172,3 +172,26 @@ end
 # => <Sonarqube::ObjectifiedHash:46120 {hash: {}}
 # => true
 ```
+
+# Internal Apis
+
+* Use at your own risk; internal services are subject to change or removal without notice (Sonarqube info).
+
+## api/permissions/groups
+
+```ruby
+['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission |
+  status = Sonarqube.permissions_add_group({groupName: 'New-Group', permission: permission, projectKey: 'test'})
+  status.to_hash.nil?
+end
+# => <Sonarqube::ObjectifiedHash:46120 {hash: {}}
+# => true
+# => <Sonarqube::ObjectifiedHash:46120 {hash: {}}
+# => true
+# => <Sonarqube::ObjectifiedHash:46120 {hash: {}}
+# => true
+# => <Sonarqube::ObjectifiedHash:46120 {hash: {}}
+# => true
+# => <Sonarqube::ObjectifiedHash:46120 {hash: {}}
+# => true
+```
