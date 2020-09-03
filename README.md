@@ -10,7 +10,7 @@
 [documentation](https://www.rubydoc.info/gems/sonarqube/frames)
 
 Sonarqube is a Ruby wrapper and CLI for the Sonarqube API
-As of version `1.0.0` this gem only supports Sonarqube 7.9.
+As of version `1.2.0` this gem only supports Sonarqube 7.9.
 
 ## Installation
 
