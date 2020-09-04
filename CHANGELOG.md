@@ -4,6 +4,17 @@
 
 Please see: https://github.com/psyreactor/sonarqube-ruby/releases
 
+### 1.2.0 (03/09/2020)
+
+- New features
+  * Added support for permissions API
+  * Added support for premissions internal API
+- Fix
+  * Fix Coverage
+  * Fix Documentation file name
+- New
+  * Guard config
+
 ### 1.1.0 (24/08/2020)
 
 - New features
