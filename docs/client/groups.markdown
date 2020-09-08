@@ -63,7 +63,7 @@ group = Sonarqube.add_member('AXQRcKrW9pRiZzanEJ2E', 'test-user')
 # => #<Sonarqube::ObjectifiedHash:46220 {hash: {}}
 group.to_hash.empty?
 # => true
-group = Sonarqube.add_member('AXQRcKrW9pRiZzanEJ2E', 'test-user', {name: 'sonar-groups'})
+group = Sonarqube.add_member(nil, 'test-user', {name: 'sonar-groups'})
 # => #<Sonarqube::ObjectifiedHash:46220 {hash: {}}
 group.to_hash.empty?
 # => true
