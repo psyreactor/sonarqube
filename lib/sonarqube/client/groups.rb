@@ -79,7 +79,7 @@ class Sonarqube::Client
     # @option options [String] :name Optional name of group.
     # @return [Sonarqube::ObjectifiedHash]
     def add_member(id = nil, login = nil, options = {})
-      raise ArgumentError, 'Missing required parameters' if id.nil? || login.nil?
+      raise ArgumentError, 'Missing required parameters' if id.nil? && login.nil?
 
       post('/api/user_groups/add_user', body: { id: id, login: login }.merge!(options))
     end
@@ -97,7 +97,7 @@ class Sonarqube::Client
     # @option options [String] :name Optional name of group.
     # @return [Sonarqube::ObjectifiedHash]
     def remove_member(id = nil, login = nil, options = {})
-      raise ArgumentError, 'Missing required parameters' if id.nil? || login.nil?
+      raise ArgumentError, 'Missing required parameters' if id.nil? && login.nil?
 
       post('/api/user_groups/remove_user', body: { id: id, login: login }.merge!(options))
     end

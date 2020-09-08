@@ -4,6 +4,11 @@
 
 Please see: https://github.com/psyreactor/sonarqube-ruby/releases
 
+### 1.2.1 (08/09/2020)
+
+- Fix
+  * Fix groups parameter validation
+
 ### 1.2.0 (03/09/2020)
 
 - New features
