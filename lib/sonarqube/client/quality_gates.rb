@@ -4,12 +4,12 @@ class Sonarqube::Client
   # Defines methods related to tokens.
   # @see https://SONAR_URL/web_api/api/qualitygates
   module QualityGates
-    ALLOWED_OPERATORS = %w(LT GT)
-    ALLOWED_METRICS = %w(
+    ALLOWED_OPERATORS = %w[LT GT].freeze
+    ALLOWED_METRICS = %w[
       coverage new_coverage duplicated_lines_density
       new_duplicated_lines_density reliability_rating new_reliability_rating
       maintainability_rating new_maintainability_rating
-    )
+    ].freeze
     # Create new quality gate.
     #
     # @example
@@ -49,7 +49,9 @@ class Sonarqube::Client
     # @return [Sonarqube::ObjectifiedHash]
     def create_quality_gate_condition(name, metric, error_threshold, operator = 'LT')
       raise ArgumentError, 'Missing required parameters' if name.nil? || metric.nil? || error_threshold.nil?
-      raise ArgumentError, "Operator must be in #{ALLOWED_OPERATORS.join(', ')}" unless ALLOWED_OPERATORS.include?(operator)
+      unless ALLOWED_OPERATORS.include?(operator)
+        raise ArgumentError, "Operator must be in #{ALLOWED_OPERATORS.join(', ')}"
+      end
       raise ArgumentError, "Metric must be in #{ALLOWED_METRICS.join(', ')}" unless ALLOWED_METRICS.include?(metric)
 
       body = {
@@ -69,12 +71,14 @@ class Sonarqube::Client
     #
     # @param  [String] name (required) Quality Gate name.
     # @return [Sonarqube::ObjectifiedHash]
+    # rubocop:disable Naming/AccessorMethodName
     def set_default_quality_gate(name)
       raise ArgumentError, 'Missing required parameters' if name.nil?
 
       body = { name: name }
       post('/api/qualitygates/set_as_default', body: body)
     end
+    # rubocop:enable Naming/AccessorMethodName
     alias default_quality_gate_set set_default_quality_gate
 
     # List quality gates.
