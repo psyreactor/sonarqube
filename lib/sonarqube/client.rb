@@ -9,6 +9,7 @@ module Sonarqube
     include Groups
     include Permissions
     include Projects
+    include QualityGates
     include Tokens
     include Users
 
