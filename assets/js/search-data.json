@@ -1,0 +1,380 @@
+{"0": {
+    "doc": "Configuration",
+    "title": "Configuration",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/config.html",
+    "relUrl": "/config.html"
+  },"1": {
+    "doc": "Configuration",
+    "title": "Create a connection",
+    "content": "Before you can make a request, you must give Sonarqube your connection information. Sonarqube.configure do |config| config.endpoint = 'https://example.net:9000' # API endpoint URL, default: ENV['SONARQUBE_API_ENDPOINT'] config.private_token = 'Dfrt938dSgAOWd4' # user's private token, default: ENV['SONARQUBE_API_PRIVATE_TOKEN'] # Optional # config.user_agent = 'Custom User Agent' # user agent, default: 'Sonarqube Ruby Gem [version]' # config.httparty = { } # Parameters config for httparty end . ",
+    "url": "https://psyreactor.github.io/sonarqube/config.html#create-a-connection",
+    "relUrl": "/config.html#create-a-connection"
+  },"2": {
+    "doc": "Configuration",
+    "title": "SSL config disabled",
+    "content": "Sonarqube.configure do |config| config.endpoint = 'https://example.net:9000' # API endpoint URL, default: ENV['SONARQUBE_API_ENDPOINT'] config.private_token = 'Dfrt938dSgAOWd4' # user's private token, default: ENV['SONARQUBE_API_PRIVATE_TOKEN'] # Optional config.user_agent = 'Sonarqube Gem Agent' # user agent, default: 'Sonarqube Ruby Gem [version]' config.httparty = { verify: false } # Parameters config for httparty end httparty: ) . All of these parameters are also configurable via the top-level Sonarqube object. ",
+    "url": "https://psyreactor.github.io/sonarqube/config.html#ssl-config-disabled",
+    "relUrl": "/config.html#ssl-config-disabled"
+  },"3": {
+    "doc": "Configuration",
+    "title": "Top-level Sonarqube Object",
+    "content": "# set an API endpoint Sonarqube.endpoint = 'https://example.net:9000' # =&gt; \"https://example.net:9000\" # set a user private token Sonarqube.private_token = 'Dfrt938dSgAOWd4' # =&gt; \"Dfrt938dSgAOWd4\" # disable ssl verify Sonarqube.httparty = { verify: false } # configure a proxy server Sonarqube.http_proxy('proxyhost', 8888) # proxy server with basic auth Sonarqube.http_proxy('proxyhost', 8888, 'proxyuser', 'strongpasswordhere') . Or, if you want to be really Unixy, these parameters are all configurable via environment variables: . ",
+    "url": "https://psyreactor.github.io/sonarqube/config.html#top-level-sonarqube-object",
+    "relUrl": "/config.html#top-level-sonarqube-object"
+  },"4": {
+    "doc": "Configuration",
+    "title": "Sonarqube will use these env",
+    "content": "ENV['SONARQUBE_API_ENDPOINT'] = 'https://example.com:9000' ENV['SONARQUBE_API_PRIVATE_TOKEN'] = 'Dfrt938dSgAOWd4' ENV['SONARQUBE_API_HTTPARTY_OPTIONS'] = '{read_timeout: 60}' . You can also create a full Client object with hash parameters: . ",
+    "url": "https://psyreactor.github.io/sonarqube/config.html#sonarqube-will-use-these-env",
+    "relUrl": "/config.html#sonarqube-will-use-these-env"
+  },"5": {
+    "doc": "Configuration",
+    "title": "object with hash parameters",
+    "content": "sonar = Sonarqube.client( endpoint: 'https://example.com:9000', private_token: 'Dfrt938dSgAOWd4', httparty: { headers: { 'Cookie' =&gt; 'sonarqube_canary=true' } } ) # =&gt; #&lt;Sonarqube::Client:0x00000001e62408 @endpoint=\"https://api.example.com\", @private_token=\"Dfrt938dSgAOWd4\", @user_agent=\"Sonarqube Ruby Gem 2.0.0\"&gt; . ",
+    "url": "https://psyreactor.github.io/sonarqube/config.html#object-with-hash-parameters",
+    "relUrl": "/config.html#object-with-hash-parameters"
+  },"6": {
+    "doc": "Contributing",
+    "title": "Contributing to Sonarqube",
+    "content": "Please take a moment to review this document in order to make the contribution process easy and effective for everyone involved! . ",
+    "url": "https://psyreactor.github.io/sonarqube/contrib.html#contributing-to-sonarqube",
+    "relUrl": "/contrib.html#contributing-to-sonarqube"
+  },"7": {
+    "doc": "Contributing",
+    "title": "Using the issue tracker",
+    "content": "You can use the issues tracker for: . | bug reports | feature requests | submitting pull requests | . Use Stackoverflow for questions and personal support requests. ",
+    "url": "https://psyreactor.github.io/sonarqube/contrib.html#using-the-issue-tracker",
+    "relUrl": "/contrib.html#using-the-issue-tracker"
+  },"8": {
+    "doc": "Contributing",
+    "title": "Bug reports",
+    "content": "A bug is a demonstrable problem that is caused by the code in the repository. Good bug reports are extremely helpful - thank you! . Guidelines for bug reports: . | Use the GitHub issue search — check if the issue has already been reported. | Check if the issue has been fixed — try to reproduce it using the master branch in the repository. | Isolate and report the problem — ideally create a reduced test case. | . Please try to be as detailed as possible in your report. Include information about your Ruby, Sonarqube client and Sonarqube instance versions. Please provide steps to reproduce the issue as well as the outcome you were expecting! All these details will help developers to fix any potential bugs. Example: . Short and descriptive example bug report title . A summary of the issue and the environment in which it occurs. If suitable, include the steps required to reproduce the bug. | This is the first step | This is the second step | Further steps, etc. | . Any other information you want to share that is relevant to the issue being reported. This might include the lines of code that you have identified as causing the bug, and potential solutions (and your opinions on their merits). ",
+    "url": "https://psyreactor.github.io/sonarqube/contrib.html#bug-reports",
+    "relUrl": "/contrib.html#bug-reports"
+  },"9": {
+    "doc": "Contributing",
+    "title": "Feature requests",
+    "content": "Feature requests are welcome. But take a moment to find out whether your idea fits with the scope and aims of the project. It’s up to you to make a strong case to convince the community of the merits of this feature. Please provide as much detail and context as possible. ",
+    "url": "https://psyreactor.github.io/sonarqube/contrib.html#feature-requests",
+    "relUrl": "/contrib.html#feature-requests"
+  },"10": {
+    "doc": "Contributing",
+    "title": "Contributing Documentation",
+    "content": "Code documentation has a special convention: it uses YARD formatting and the first paragraph is considered to be a short summary. For methods say what it will do. For example write something like: . # Reverses the contents of a String or IO object. # # @param [String, #read] contents the contents to reverse # @return [String] the contents reversed lexically def reverse(contents) contents = contents.read if contents.respond_to? :read contents.reverse end . For classes, modules say what it is. For example write something like: . # Defines methods related to groups. module Groups . Keep in mind that the documentation notes might show up in a summary somewhere, long texts in the documentation notes create very ugly summaries. As a rule of thumb anything longer than 80 characters is too long. Try to keep unnecessary details out of the first paragraph, it’s only there to give a user a quick idea of what the documented “thing” does/is. The rest of the documentation notes can contain the details, for example parameters and what is returned. If possible include examples. For example: . # Gets information about a project. # # @example # Sonarqube.project(3) # Sonarqube.project('sonarqube') # # @param [Integer, String] id The ID or name of a project. # @return [Sonarqube::ObjectifiedHash] def project(id) . This makes it easy to test the examples so that they don’t go stale and examples are often a great help in explaining what a method does. ",
+    "url": "https://psyreactor.github.io/sonarqube/contrib.html#contributing-documentation",
+    "relUrl": "/contrib.html#contributing-documentation"
+  },"11": {
+    "doc": "Contributing",
+    "title": "Pull requests",
+    "content": "Good pull requests - patches, improvements, new features - are a fantastic help. They should remain focused in scope and avoid containing unrelated commits. IMPORTANT: By submitting a patch, you agree that your work will be licensed under the license used by the project. If you have any large pull request in mind (e.g. implementing features, refactoring code, etc), please ask first otherwise you risk spending a lot of time working on something that the project’s developers might not want to merge into the project. Please adhere to the coding conventions in the project (indentation, accurate comments, etc.) and don’t forget to add your own tests and documentation. When working with git, we recommend the following process in order to craft an excellent pull request: . | Fork the project, clone your fork, and configure the remotes: . # Clone your fork of the repo into the current directory git clone https://github.com/&lt;your-username&gt;/sonarqube # Navigate to the newly cloned directory cd sonarqube # Assign the original repo to a remote called \"upstream\" git remote add upstream https://github.com/psyreactor/sonarqube . | If you cloned a while ago, get the latest changes from upstream: . git checkout master git pull upstream master . | Create a new topic branch (off of master) to contain your feature, change, or fix. IMPORTANT: Making changes in master is discouraged. You should always keep your local master in sync with upstream master and make your changes in topic branches. git checkout -b &lt;topic-branch-name&gt; . | Commit your changes in logical chunks. Keep your commit messages organized, with a short description in the first line and more detailed information on the following lines. Feel free to use Git’s interactive rebase feature to tidy up your commits before making them public. | Make sure all the tests are still passing. rake . | Push your topic branch up to your fork: . git push origin &lt;topic-branch-name&gt; . | Open a Pull Request with a clear title and description. | If you haven’t updated your pull request for a while, you should consider rebasing on master and resolving any conflicts. IMPORTANT: Never ever merge upstream master into your branches. You should always git rebase on master to bring your changes up to date when necessary. git checkout master git pull upstream master git checkout &lt;your-topic-branch&gt; git rebase master . | . Thank you for your contributions! . ",
+    "url": "https://psyreactor.github.io/sonarqube/contrib.html#pull-requests",
+    "relUrl": "/contrib.html#pull-requests"
+  },"12": {
+    "doc": "Contributing",
+    "title": "Contributing",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/contrib.html",
+    "relUrl": "/contrib.html"
+  },"13": {
+    "doc": "Groups",
+    "title": "Groups",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html#groups",
+    "relUrl": "/client/groups.html#groups"
+  },"14": {
+    "doc": "Groups",
+    "title": "Create Group",
+    "content": "group = Sonarqube.create_group('New-Group', {description: 'Sonarqube group users'}) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46500 {hash: {\"group\"=&gt;{\"uuid\"=&gt;\"AXQYrrgCsrvdoo0YodNM\", \"organization\"=&gt;\"default-organization\", \"name\"=&gt;\"New-Group\", \"description\"=&gt;\"Sonarqube group users\", \"membersCount\"=&gt;0, \"default\"=&gt;false}}} group.group.uuid # AXQYrrgCsrvdoo0YodNM group.group.description # Sonarqube group users . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html#create-group",
+    "relUrl": "/client/groups.html#create-group"
+  },"15": {
+    "doc": "Groups",
+    "title": "Delete Group",
+    "content": "group = Sonarqube.group_delete('New-Group') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} group.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html#delete-group",
+    "relUrl": "/client/groups.html#delete-group"
+  },"16": {
+    "doc": "Groups",
+    "title": "Search Group",
+    "content": "groups = Sonarqube.search_groups({ q: 'sonar-users' }) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46520 {hash: {\"paging\"=&gt;{\"pageIndex\"=&gt;1, \"pageSize\"=&gt;100, \"total\"=&gt;1}, \"groups\"=&gt;[{\"uuid\"=&gt;\"AXOt93S3gMZPhbn-E_O7\", \"name\"=&gt;\"sonar-users\", \"description\"=&gt;\"Any new users created will automatically join this group\", \"membersCount\"=&gt;5, \"default\"=&gt;true}]}} groups.groups.each do | group | puts \"name: #{group.name}\" puts \"description: #{group.description}\" puts \"membersCount: #{group.membersCount}\" end # name: sonar-users # description: Any new users created will automatically join this group # MembersCount: 5 . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html#search-group",
+    "relUrl": "/client/groups.html#search-group"
+  },"17": {
+    "doc": "Groups",
+    "title": "Update Group",
+    "content": "group = Sonarqube.group_members('AXQRcKrW9pRiZzanEJ2E', { description: 'update group description' }) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46080 {hash: {\"group\"=&gt;{\"uuid\"=&gt;\"AXQRcKrW9pRiZzanEJ2E\", \"organization\"=&gt;\"default-organization\", \"name\"=&gt;\"Sonarqube-Group\", \"description\"=&gt;\"update group description'\", \"membersCount\"=&gt;0, \"default\"=&gt;false}}} group.group.uuid # AXQRcKrW9pRiZzanEJ2E group.group.description # update group description . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html#update-group",
+    "relUrl": "/client/groups.html#update-group"
+  },"18": {
+    "doc": "Groups",
+    "title": "Add Member",
+    "content": "group = Sonarqube.add_member('AXQRcKrW9pRiZzanEJ2E', 'test-user') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} group.to_hash.empty? # =&gt; true group = Sonarqube.add_member(nil, 'test-user', {name: 'sonar-groups'}) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} group.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html#add-member",
+    "relUrl": "/client/groups.html#add-member"
+  },"19": {
+    "doc": "Groups",
+    "title": "Remove Member",
+    "content": "group = Sonarqube.remove_member('AXQRcKrW9pRiZzanEJ2E', 'test-user') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} group.to_hash.empty? # =&gt; true group = Sonarqube.remove_member('AXQRcKrW9pRiZzanEJ2E', 'test-user', {name: 'sonar-groups'}) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} group.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html#remove-member",
+    "relUrl": "/client/groups.html#remove-member"
+  },"20": {
+    "doc": "Groups",
+    "title": "List Members",
+    "content": "group = Sonarqube.list_members({name: 'sonar-groups'}) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46080 {hash: {\"users\"=&gt;[{\"login\"=&gt;\"admin\", \"name\"=&gt;\"Administrator\", \"selected\"=&gt;true}, {\"login\"=&gt;\"new_user\", \"name\"=&gt;\"key_new_user\", \"selected\"=&gt;true}, {\"login\"=&gt;\"login_name\", \"name\"=&gt;\"name_user\", \"selected\"=&gt;true}, {\"login\"=&gt;\"newlogin\", \"name\"=&gt;\"test QA\", \"selected\"=&gt;true}, {\"login\"=&gt;\"test4\", \"name\"=&gt;\"user test\", \"selected\"=&gt;true}], \"p\"=&gt;1, \"ps\"=&gt;25, \"total\"=&gt;5}} groups.users.each do | user | puts \"name: #{user.name}\" puts \"login: #{user.login}\" end # name: Administrator # login: admin # name: name_user # login: login_name # name: test QA # login: newlogin # name: user test # login: test4 . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html#list-members",
+    "relUrl": "/client/groups.html#list-members"
+  },"21": {
+    "doc": "Groups",
+    "title": "Groups",
+    "content": ". | Groups . | Create Group | Delete Group | Search Group | Update Group | Add Member | Remove Member | List Members | . | . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/groups.html",
+    "relUrl": "/client/groups.html"
+  },"22": {
+    "doc": "Client",
+    "title": "Client Api",
+    "content": "The Sonarqube gem attempts to make the Sonarqube API as object-oriented and Ruby-like as possible. All of the methods and API calls are heavily documented with examples inline using YARD. In order to keep the examples versioned with the code, this documentation only lists a few examples for using the Sonarqube gem. Please see the inline documentation for the full API documentation . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/#client-api",
+    "relUrl": "/client/#client-api"
+  },"23": {
+    "doc": "Client",
+    "title": "Client",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/client/",
+    "relUrl": "/client/"
+  },"24": {
+    "doc": "Install",
+    "title": "Sonarqube",
+    "content": ". website | documentation . Sonarqube is a Ruby wrapper for the Sonarqube API this gem only supports Sonarqube 7.9. ",
+    "url": "https://psyreactor.github.io/sonarqube/#sonarqube",
+    "relUrl": "/#sonarqube"
+  },"25": {
+    "doc": "Install",
+    "title": "Installation",
+    "content": "Install it from rubygems: . gem install sonarqube . Or add to a Gemfile: . gem 'sonarqube' # gem 'sonarqube', github: 'psyreactor/sonarqube' . ",
+    "url": "https://psyreactor.github.io/sonarqube/#installation",
+    "relUrl": "/#installation"
+  },"26": {
+    "doc": "Install",
+    "title": "Install",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/",
+    "relUrl": "/"
+  },"27": {
+    "doc": "Permissions",
+    "title": "Permissions",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#permissions",
+    "relUrl": "/client/permissions.html#permissions"
+  },"28": {
+    "doc": "Permissions",
+    "title": "Add Permisssion to group",
+    "content": "['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission | status = Sonarqube.permissions_add_group({groupName: 'New-Group', permission: permission, projectKey: 'test'}) status.to_hash.nil? end # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#add-permisssion-to-group",
+    "relUrl": "/client/permissions.html#add-permisssion-to-group"
+  },"29": {
+    "doc": "Permissions",
+    "title": "Add group to template",
+    "content": "['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission | status = Sonarqube.add_group_to_template({groupName: 'New-Group', permission: permission, templateName: 'test'}) status.to_hash.nil? end # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#add-group-to-template",
+    "relUrl": "/client/permissions.html#add-group-to-template"
+  },"30": {
+    "doc": "Permissions",
+    "title": "Add project creator to template",
+    "content": "['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission | status = Sonarqube.add_project_creator_to_template(permission, { templateName: 'test' }) status.to_hash.nil? end # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#add-project-creator-to-template",
+    "relUrl": "/client/permissions.html#add-project-creator-to-template"
+  },"31": {
+    "doc": "Permissions",
+    "title": "Add permissions to user",
+    "content": "['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission | status = permission_add_user('user', permission, { templateName: 'test' }) status.to_hash.nil? end # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#add-permissions-to-user",
+    "relUrl": "/client/permissions.html#add-permissions-to-user"
+  },"32": {
+    "doc": "Permissions",
+    "title": "Add user to template",
+    "content": "['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission | status = Sonarqube.add_user_to_template({ login: 'new_user', permission: 'user', templateName: 'test' }) status.to_hash.nil? end # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#add-user-to-template",
+    "relUrl": "/client/permissions.html#add-user-to-template"
+  },"33": {
+    "doc": "Permissions",
+    "title": "Apply Template",
+    "content": "status = Sonarqube.apply_template({ projectName: 'New-Group', templateName: 'test' }) status.to_hash.nil? # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#apply-template",
+    "relUrl": "/client/permissions.html#apply-template"
+  },"34": {
+    "doc": "Permissions",
+    "title": "Bulk apply template",
+    "content": "status = Sonarqube.bulk_apply_template({ templateName: 'test', projects: 'my_project,another_project' }) # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} status.to_hash.nil? . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#bulk-apply-template",
+    "relUrl": "/client/permissions.html#bulk-apply-template"
+  },"35": {
+    "doc": "Permissions",
+    "title": "Create Template",
+    "content": "status = Sonarqube.create_template('template_name', 'description', '.*\\.finance\\..*') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46120 {hash: {\"permissionTemplate\"=&gt;{\"id\"=&gt;\"AXQt1hhmsmLGhox2KqqJ\", \"name\"=&gt;\"template_name\", \"description\"=&gt;\"description\", \"projectKeyPattern\"=&gt;\".*\\\\.finance\\\\..*\", \"createdAt\"=&gt;\"2020-08-27T02:53:59+0000\", \"updatedAt\"=&gt;\"2020-08-27T02:53:59+0000\", \"permissions\"=&gt;[]}}} status.permissionTemplate.name # =&gt; template_name . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#create-template",
+    "relUrl": "/client/permissions.html#create-template"
+  },"36": {
+    "doc": "Permissions",
+    "title": "Delete Template",
+    "content": "status = Sonarqube.delete_template({ templateName: 'template_name' }) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46120 {hash: {\"permissionTemplate\"=&gt;{\"id\"=&gt;\"AXQt1hhmsmLGhox2KqqJ\", \"name\"=&gt;\"template_name\", \"description\"=&gt;\"description\", \"projectKeyPattern\"=&gt;\".*\\\\.finance\\\\..*\", \"createdAt\"=&gt;\"2020-08-27T02:53:59+0000\", \"updatedAt\"=&gt;\"2020-08-27T02:53:59+0000\", \"permissions\"=&gt;[]}}} status.to_hash.nil? # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#delete-template",
+    "relUrl": "/client/permissions.html#delete-template"
+  },"37": {
+    "doc": "Permissions",
+    "title": "Remove group from template",
+    "content": "['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission | status = Sonarqube.remove_group_from_template({groupName: 'New-Group', permission: permission, templateName: 'test'}) status.to_hash.nil? end # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#remove-group-from-template",
+    "relUrl": "/client/permissions.html#remove-group-from-template"
+  },"38": {
+    "doc": "Permissions",
+    "title": "Remove Permission from group",
+    "content": "['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission | status = Sonarqube.permissions_remove_group({groupName: 'New-Group', permission: permission, projectKey: 'test'}) status.to_hash.nil? end # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#remove-permission-from-group",
+    "relUrl": "/client/permissions.html#remove-permission-from-group"
+  },"39": {
+    "doc": "Permissions",
+    "title": "Internal Apis",
+    "content": ". | Use at your own risk; internal services are subject to change or removal without notice (Sonarqube info). | . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#internal-apis",
+    "relUrl": "/client/permissions.html#internal-apis"
+  },"40": {
+    "doc": "Permissions",
+    "title": "api/permissions/groups",
+    "content": "['user', 'codeviewer', 'issueadmin', 'securityhotspotadmin', 'scan'].each do | permission | status = Sonarqube.permissions_add_group({groupName: 'New-Group', permission: permission, projectKey: 'test'}) status.to_hash.nil? end # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true # =&gt; &lt;Sonarqube::ObjectifiedHash:46120 {hash: {}} # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html#apipermissionsgroups",
+    "relUrl": "/client/permissions.html#apipermissionsgroups"
+  },"41": {
+    "doc": "Permissions",
+    "title": "Permissions",
+    "content": ". | Permissions . | Add Permisssion to group | Add group to template | Add project creator to template | Add permissions to user | Add user to template | Apply Template | Bulk apply template | Create Template | Delete Template | Remove group from template | Remove Permission from group | . | Internal Apis . | api/permissions/groups | . | . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/permissions.html",
+    "relUrl": "/client/permissions.html"
+  },"42": {
+    "doc": "Projects",
+    "title": "Projects",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/client/projects.html#projects",
+    "relUrl": "/client/projects.html#projects"
+  },"43": {
+    "doc": "Projects",
+    "title": "Create Project",
+    "content": "project = Sonarqube.project_create('new_project') # =&gt; &lt;Sonarqube::ObjectifiedHash:46200 {hash: {\"project\"=&gt;{\"key\"=&gt;\"new_project\", \"name\"=&gt;\"new_project\", \"qualifier\"=&gt;\"TRK\", \"visibility\"=&gt;\"public\"}}} project.project.key # =&gt; \"new_project\" project.to_hash # =&gt; {\"project\"=&gt;{\"key\"=&gt;\"new_project\", \"name\"=&gt;\"new_project\", \"qualifier\"=&gt;\"TRK\", \"visibility\"=&gt;\"public\"}} . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/projects.html#create-project",
+    "relUrl": "/client/projects.html#create-project"
+  },"44": {
+    "doc": "Projects",
+    "title": "Delete Project",
+    "content": "project = Sonarqube.project_delete('test') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} project.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/projects.html#delete-project",
+    "relUrl": "/client/projects.html#delete-project"
+  },"45": {
+    "doc": "Projects",
+    "title": "Search Project",
+    "content": "projects = Sonarqube.project_search() # =&gt; #&lt;Sonarqube::ObjectifiedHash:46240 {hash: {\"paging\"=&gt;{\"pageIndex\"=&gt;1, \"pageSize\"=&gt;100, \"total\"=&gt;2}, \"components\"=&gt;[{\"organization\"=&gt;\"default-organization\", \"key\"=&gt;\"old_key\", \"name\"=&gt;\"new_proyect\", \"qualifier\"=&gt;\"TRK\", \"visibility\"=&gt;\"private\"}, {\"organization\"=&gt;\"default-organization\", \"key\"=&gt;\"test\", \"name\"=&gt;\"test\", \"qualifier\"=&gt;\"TRK\", \"visibility\"=&gt;\"public\"}]}} projects.components.each do | project | puts \"name: #{project.name}\" puts \"key: #{project.key}\" end # name: new_proyect # key: old_key # name: test # key: test . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/projects.html#search-project",
+    "relUrl": "/client/projects.html#search-project"
+  },"46": {
+    "doc": "Projects",
+    "title": "Update project key.",
+    "content": "Sonarqube.project_update_key('key_ori', 'key_new') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} project.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/projects.html#update-project-key",
+    "relUrl": "/client/projects.html#update-project-key"
+  },"47": {
+    "doc": "Projects",
+    "title": "Update  project visibility.",
+    "content": "Sonarqube.project_update_visibility('sonarqube', 'public') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} project.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/projects.html#update--project-visibility",
+    "relUrl": "/client/projects.html#update--project-visibility"
+  },"48": {
+    "doc": "Projects",
+    "title": "Bulk delete projects.",
+    "content": "projects = Sonarqube.projects_bulk_delete({projects: 'new_proyect'}) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} project.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/projects.html#bulk-delete-projects",
+    "relUrl": "/client/projects.html#bulk-delete-projects"
+  },"49": {
+    "doc": "Projects",
+    "title": "Projects",
+    "content": ". | Projects . | Create Project | Delete Project | Search Project | Update project key. | Update project visibility. | Bulk delete projects. | . | . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/projects.html",
+    "relUrl": "/client/projects.html"
+  },"50": {
+    "doc": "Tokens",
+    "title": "Tokens",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/client/tokens.html#tokens",
+    "relUrl": "/client/tokens.html#tokens"
+  },"51": {
+    "doc": "Tokens",
+    "title": "Create Token",
+    "content": "user = Sonarqube.token_create('token_name', 'login_user') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46100 {hash: {\"login\"=&gt;\"login_name\", \"name\"=&gt;\"token_name\", \"token\"=&gt;\"c45bc5855603e851904f7ae5357e667b286a9fc1\", \"createdAt\"=&gt;\"2020-08-24T23:56:41+0000\"}} user.token # c45bc5855603e851904f7ae5357e667b286a9fc1 user.name # token_name . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/tokens.html#create-token",
+    "relUrl": "/client/tokens.html#create-token"
+  },"52": {
+    "doc": "Tokens",
+    "title": "Revoke Token",
+    "content": "user = Sonarqube.token_revoke('token_name', 'login_user') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} user.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/tokens.html#revoke-token",
+    "relUrl": "/client/tokens.html#revoke-token"
+  },"53": {
+    "doc": "Tokens",
+    "title": "List Tokens",
+    "content": "users = Sonarqube.tokens_list('login_user') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46080 {hash: {\"login\"=&gt;\"login_user\", \"userTokens\"=&gt;[{\"name\"=&gt;\"token_service\", \"createdAt\"=&gt;\"2020-08-24T23:56:41+0000\"}]}} puts \"login: #{user.login}\" # login: login_user users.userTokens.each do | token | puts \"name: #{token.name}\" end # name: token_service . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/tokens.html#list-tokens",
+    "relUrl": "/client/tokens.html#list-tokens"
+  },"54": {
+    "doc": "Tokens",
+    "title": "Tokens",
+    "content": ". | Tokens . | Create Token | Revoke Token | List Tokens | . | . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/tokens.html",
+    "relUrl": "/client/tokens.html"
+  },"55": {
+    "doc": "Users",
+    "title": "Users",
+    "content": " ",
+    "url": "https://psyreactor.github.io/sonarqube/client/users.html#users",
+    "relUrl": "/client/users.html#users"
+  },"56": {
+    "doc": "Users",
+    "title": "Create User",
+    "content": "user = Sonarqube.user_create('new_user', 'key_new_user' ,'secretpassword') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46320 {hash: {\"user\"=&gt;{\"login\"=&gt;\"login_name\", \"name\"=&gt;\"name_user\", \"scmAccounts\"=&gt;[], \"active\"=&gt;true, \"local\"=&gt;true}}} user.user.login # login_name user.user.name # name_user . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/users.html#create-user",
+    "relUrl": "/client/users.html#create-user"
+  },"57": {
+    "doc": "Users",
+    "title": "Update User",
+    "content": "user = Sonarqube.update_user('test', { email: 'test@example.com', name: 'user test' }) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46080 {hash: {\"user\"=&gt;{\"login\"=&gt;\"test\", \"name\"=&gt;\"user test\", \"email\"=&gt;\"test@example.com\", \"active\"=&gt;true, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"test\", \"externalProvider\"=&gt;\"sonarqube\", \"groups\"=&gt;[], \"scmAccounts\"=&gt;[]}}} user.user.login # test user.user.name # 'user test' . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/users.html#update-user",
+    "relUrl": "/client/users.html#update-user"
+  },"58": {
+    "doc": "Users",
+    "title": "Search User",
+    "content": "users = Sonarqube.users_search() # =&gt; #&lt;Sonarqube::ObjectifiedHash:46340 {hash: {\"paging\"=&gt;{\"pageIndex\"=&gt;1, \"pageSize\"=&gt;50, \"total\"=&gt;5}, \"users\"=&gt;[{\"login\"=&gt;\"admin\", \"name\"=&gt;\"Administrator\", \"active\"=&gt;true, \"groups\"=&gt;[\"sonar-administrators\", \"sonar-users\"], \"tokensCount\"=&gt;1, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"admin\", \"externalProvider\"=&gt;\"sonarqube\", \"lastConnectionDate\"=&gt;\"2020-08-22T23:09:14+0000\"}, {\"login\"=&gt;\"new_user\", \"name\"=&gt;\"key_new_user\", \"active\"=&gt;true, \"groups\"=&gt;[\"sonar-users\"], \"tokensCount\"=&gt;0, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"new_user\", \"externalProvider\"=&gt;\"sonarqube\"}, {\"login\"=&gt;\"login_name\", \"name\"=&gt;\"name_user\", \"active\"=&gt;true, \"groups\"=&gt;[\"sonar-users\"], \"tokensCount\"=&gt;0, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"login_name\", \"externalProvider\"=&gt;\"sonarqube\"}, {\"login\"=&gt;\"test3\", \"name\"=&gt;\"test QA\", \"active\"=&gt;true, \"groups\"=&gt;[\"sonar-users\"], \"tokensCount\"=&gt;0, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"test3\", \"externalProvider\"=&gt;\"sonarqube\"}, {\"login\"=&gt;\"newlogin\", \"name\"=&gt;\"test QA\", \"active\"=&gt;true, \"groups\"=&gt;[\"sonar-users\"], \"tokensCount\"=&gt;0, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"newlogin\", \"externalProvider\"=&gt;\"sonarqube\"}]}} users.users.each do | user | puts \"name: #{user.name}\" puts \"login: #{user.login}\" puts \"lastConection: #{user.lastConnectionDate}\" if defined? user.lastConnectionDate end # name: Administrator # login: admin # lastConection: 2020-08-22T23:09:14+0000 # name: key_new_user # login: new_user # name: name_user # login: login_name # name: test QA # login: test3 # name: test QA # login: newlogin . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/users.html#search-user",
+    "relUrl": "/client/users.html#search-user"
+  },"59": {
+    "doc": "Users",
+    "title": "Deactivate User",
+    "content": "user = Sonarqube.deactivate_user('test') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46080 {hash: {\"user\"=&gt;{\"login\"=&gt;\"test\", \"name\"=&gt;\"user test\", \"email\"=&gt;\"test@example.com\", \"active\"=&gt;false, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"test\", \"externalProvider\"=&gt;\"sonarqube\", \"groups\"=&gt;[], \"scmAccounts\"=&gt;[]}}} user.user.login # test user.user.active # false . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/users.html#deactivate-user",
+    "relUrl": "/client/users.html#deactivate-user"
+  },"60": {
+    "doc": "Users",
+    "title": "Change Password User",
+    "content": "user = Sonarqube.change_password_user('joe', 'password') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46080 {hash: {\"user\"=&gt;{\"login\"=&gt;\"joe\", \"name\"=&gt;\"joe testing\", \"email\"=&gt;\"test@example.com\", \"active\"=&gt;false, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"test\", \"externalProvider\"=&gt;\"sonarqube\", \"groups\"=&gt;[], \"scmAccounts\"=&gt;[]}}} user.user.login # test user.user.active # true # For own user send old_passwod user = Sonarqube.change_password_user('admin', 'password', 'old_password') # =&gt; #&lt;Sonarqube::ObjectifiedHash:46080 {hash: {\"user\"=&gt;{\"login\"=&gt;\"admin\", \"name\"=&gt;\"Sonarqube Admin\", \"email\"=&gt;\"admin@example.com\", \"active\"=&gt;false, \"local\"=&gt;true, \"externalIdentity\"=&gt;\"test\", \"externalProvider\"=&gt;\"sonarqube\", \"groups\"=&gt;[], \"scmAccounts\"=&gt;[]}}} . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/users.html#change-password-user",
+    "relUrl": "/client/users.html#change-password-user"
+  },"61": {
+    "doc": "Users",
+    "title": "Update Login User.",
+    "content": "user = update_login_user(login, new_login, options = {}) # =&gt; #&lt;Sonarqube::ObjectifiedHash:46220 {hash: {}} user.to_hash.empty? # =&gt; true . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/users.html#update-login-user",
+    "relUrl": "/client/users.html#update-login-user"
+  },"62": {
+    "doc": "Users",
+    "title": "Users",
+    "content": ". | Users . | Create User | Update User | Search User | Deactivate User | Change Password User | Update Login User. | . | . ",
+    "url": "https://psyreactor.github.io/sonarqube/client/users.html",
+    "relUrl": "/client/users.html"
+  }
+}
